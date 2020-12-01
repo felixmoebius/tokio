@@ -68,7 +68,7 @@ impl<T: Entry> Shard<T> {
     pub(super) fn get(&self, addr: Address) -> Option<&T> {
         let page_idx = addr.page();
 
-        if page_idx > self.shared.len() {
+        if page_idx >= self.shared.len() {
             return None;
         }
 
