@@ -31,7 +31,7 @@ impl UCred {
     }
 }
 
-#[cfg(any(target_os = "linux", target_os = "android"))]
+#[cfg(any(target_os = "linux", target_os = "android", target_os = "unikraft"))]
 pub(crate) use self::impl_linux::get_peer_cred;
 
 #[cfg(any(
